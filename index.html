@@ -1,0 +1,729 @@
+```html
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeFire BD - ফায়ার ডিটেকশন ও সেফটি সলিউশন</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Hind Siliguri for Bengali) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Contact Bar -->
+    <div class="bg-red-950/80 text-red-200 border-b border-red-900/50 py-2 px-4 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-phone text-red-500 mr-1"></i> ০১৬০১-৩৭৮৯OD (01601378983)</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-red-500 mr-1"></i> info@safefirebd.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded font-bold uppercase">24/7 সার্ভিস</span>
+                <span>জরুরি ফায়ার সেফটি সলিউশন ও সাপ্লাই</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-slate-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-red-600 to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-red-600/30">
+                        <i class="fa-solid fa-fire-extinguisher"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight text-white block leading-none">
+                            SAFE<span class="text-red-500">FIRE</span> BD
+                        </span>
+                        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-semibold">Fire Detection Systems</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse font-semibold">
+                    <a href="#home" class="text-slate-300 hover:text-red-500 transition">হোম</a>
+                    <a href="#products" class="text-slate-300 hover:text-red-500 transition">প্রোডাক্টস</a>
+                    <a href="#services" class="text-slate-300 hover:text-red-500 transition">সেবাসমূহ</a>
+                    <a href="#about" class="text-slate-300 hover:text-red-500 transition">আমাদের সম্পর্কে</a>
+                    <a href="#contact" class="text-slate-300 hover:text-red-500 transition">যোগাযোগ</a>
+                    <button id="admin-toggle-btn" class="text-amber-400 hover:text-amber-300 transition text-sm flex items-center gap-1 border border-amber-500/30 px-3 py-1.5 rounded-lg bg-amber-500/10">
+                        <i class="fa-solid fa-lock"></i> অ্যাডমিন প্যানেল
+                    </button>
+                    <a href="https://wa.me/8801601378983" target="_blank" class="bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold px-5 py-2.5 rounded-xl hover:from-red-500 hover:to-orange-500 transition shadow-lg shadow-red-600/20 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> হোয়াটসঅ্যাপ অর্ডার
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="admin-toggle-btn-mobile" class="text-amber-400 text-xs px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                        <i class="fa-solid fa-lock"></i> অ্যাডমিন
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-red-500 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-lg font-medium text-slate-300 hover:bg-slate-800 hover:text-red-500">হোম</a>
+            <a href="#products" class="block px-3 py-2 rounded-lg font-medium text-slate-300 hover:bg-slate-800 hover:text-red-500">প্রোডাক্টস</a>
+            <a href="#services" class="block px-3 py-2 rounded-lg font-medium text-slate-300 hover:bg-slate-800 hover:text-red-500">সেবাসমূহ</a>
+            <a href="#about" class="block px-3 py-2 rounded-lg font-medium text-slate-300 hover:bg-slate-800 hover:text-red-500">আমাদের সম্পর্কে</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg font-medium text-slate-300 hover:bg-slate-800 hover:text-red-500">যোগাযোগ</a>
+            <a href="https://wa.me/8801601378983" target="_blank" class="block w-full text-center bg-red-600 text-white font-bold py-2.5 rounded-lg">
+                <i class="fa-brands fa-whatsapp mr-1"></i> সরাসরি হোয়াটসঅ্যাপ
+            </a>
+        </div>
+    </nav>
+
+    <!-- Admin Section (Hidden by default) -->
+    <section id="admin-panel" class="hidden bg-slate-900 border-b border-amber-500/40 py-8 px-4 sm:px-8">
+        <div class="max-w-4xl mx-auto bg-slate-950 p-6 rounded-2xl border border-amber-500/30 space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-plus-circle"></i> নতুন প্রোডাক্ট যুক্ত করুন (অ্যাডমিন প্যানেল)
+                </h2>
+                <span class="text-xs bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full border border-amber-500/20">শুধুমাত্র আপনার জন্য</span>
+            </div>
+            
+            <form id="add-product-form" class="space-y-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">প্রোডাক্টের নাম *</label>
+                        <input type="text" id="p-name" required placeholder="উদাহরণ: Optical Smoke Detector" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white outline-none focus:border-amber-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">ক্যাটাগরি *</label>
+                        <select id="p-category" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white outline-none focus:border-amber-500 text-sm">
+                            <option value="detector">ডিটেক্টর (Detector)</option>
+                            <option value="panel">কন্ট্রোল প্যানেল (Control Panel)</option>
+                            <option value="accessory">অ্যালার্ম ও এক্সেসরিজ (Accessory)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">দাম / মূল্য (টাকা)</label>
+                        <input type="text" id="p-price" placeholder="উদাহরণ: ১২৫০ (অথবা খালি রাখুন)" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white outline-none focus:border-amber-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">ছবি লিঙ্ক (Image URL) *</label>
+                        <input type="url" id="p-image" placeholder="https://example.com/image.jpg" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white outline-none focus:border-amber-500 text-sm">
+                        <span class="text-[11px] text-slate-500">ওয়েব পিকচার লিঙ্ক অথবা ইমেজের URL বসান।</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1">সংক্ষিপ্ত বিবরণ</label>
+                    <textarea id="p-desc" rows="2" placeholder="প্রোডাক্ট সম্পর্কে ২/৩ লাইন সংক্ষেপে লিখুন..." class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white outline-none focus:border-amber-500 text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> নতুন প্রোডাক্ট ওয়েবসাইট এ যোগ করুন
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-16 sm:py-24 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-600/10 via-transparent to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved"></i> প্রিমিয়াম ফায়ার ডিটেকশন ইকুয়েপমেন্ট
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                        আপনার বাসা, অফিস ও ফ্যাক্টরির <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">সর্বোত্তম ফায়ার সেফটি</span> সলিউশন
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+                        উচ্চমানের স্মোক ডিটেক্টর, হিট ডিটেক্টর, ফায়ার অ্যালার্ম প্যানেল ও সম্পূর্ণ ফায়ার ফাইটিং মালামাল পাইকারি ও খুচরা মূল্যে সরবরাহ করা হয়। 
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#products" class="px-8 py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold rounded-xl shadow-xl shadow-red-600/20 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-boxes-stacked"></i> মালামাল দেখুন
+                        </a>
+                        <a href="https://wa.me/8801601378983" target="_blank" class="px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-invoice"></i> কোটেশন বা দাম জানুন
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats / Features Highlight -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-lg text-center space-y-2">
+                        <div class="w-12 h-12 bg-red-500/10 text-red-500 rounded-xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-bell-concierge"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">১০০% আসল</h3>
+                        <p class="text-slate-400 text-sm">সার্টিফাইড ডিটেক্টর ও পার্টস</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-lg text-center space-y-2">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">দ্রুত ডেলিভারি</h3>
+                        <p class="text-slate-400 text-sm">সারা বাংলাদেশে হোম ডেলিভারি</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-lg text-center space-y-2">
+                        <div class="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">ইনস্টলেশন</h3>
+                        <p class="text-slate-400 text-sm">দক্ষ ইঞ্জিনিয়ার দ্বারা সেটআপ</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-lg text-center space-y-2">
+                        <div class="w-12 h-12 bg-indigo-500/10 text-indigo-500 rounded-xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">২৪/৭ সাপোর্ট</h3>
+                        <p class="text-slate-400 text-sm">প্রযুক্তিগত যেকোনো সহায়তা</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 flex-grow">
+
+        <!-- Category Filter & Products Showcase -->
+        <section id="products" class="space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-red-500 font-bold uppercase tracking-wider text-sm">Our Products</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ফায়ার ডিটেকশন ও অ্যালার্ম সামগ্রী</h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                    আপনার প্রয়োজন অনুযায়ী সঠিক ফায়ার সেফটি ইকুয়েপমেন্ট বেছে নিন এবং সরাসরি হোয়াটসঅ্যাপে অর্ডার করুন।
+                </p>
+            </div>
+
+            <!-- Category Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 font-medium">
+                <button class="cat-btn active px-5 py-2 rounded-xl bg-red-600 text-white transition text-sm shadow-md" data-category="all">সব প্রোডাক্ট</button>
+                <button class="cat-btn px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition text-sm" data-category="detector">ডিটেক্টর (Detectors)</button>
+                <button class="cat-btn px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition text-sm" data-category="panel">কন্ট্রোল প্যানেল (Panels)</button>
+                <button class="cat-btn px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition text-sm" data-category="accessory">অ্যালার্ম ও এক্সেসরিজ</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+
+                <!-- Product 1: Photoelectric Smoke Detector -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="detector">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-smog text-6xl text-slate-600 group-hover:text-red-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-red-400 font-semibold uppercase">Detector</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Photoelectric Smoke Detector</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                ধোঁয়া নির্গমন বা সৃষ্টির প্রাথমিক ধাপেই তীব্র শব্দে অ্যালার্ম সংকেত পাঠাতে সক্ষম। 
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('Photoelectric Smoke Detector')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Heat Detector -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="detector">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-temperature-arrow-up text-6xl text-slate-600 group-hover:text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-orange-400 font-semibold uppercase">Detector</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Rate of Rise Heat Detector</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                তাপমাত্রা অতিরিক্ত বৃদ্ধি পেলে দ্রুত সংকেত প্রদান করে। রান্নাঘর বা ধুলোবালি যুক্ত স্থানের জন্য উপযুক্ত।
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('Heat Detector (Rate of Rise)')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Conventional Fire Alarm Control Panel -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="panel">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-sliders text-6xl text-slate-600 group-hover:text-amber-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-amber-400 font-semibold uppercase">Control Panel</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Fire Alarm Control Panel (2/4/8 Zone)</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                সমস্ত ডিটেক্টর ও সেন্সরকে একসাথে মনিটর করার মূল কন্ট্রোলিং সেন্ট্রাল সিস্টেম প্যানেল।
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('Fire Alarm Control Panel')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Manual Call Point (Glass Break) -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="accessory">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-hand-pointer text-6xl text-slate-600 group-hover:text-red-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-red-400 font-semibold uppercase">Accessory</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Manual Call Point (Emergency Break)</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                জরুরি মুহূর্তে ম্যানুয়ালি চাপ দিয়ে বা গ্লাস ভেঙে ফায়ার অ্যালার্ম চালু করার সুইচ বাটন।
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('Manual Call Point (Glass Break)')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Strobe Sounder / Hooter -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="accessory">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-volume-high text-6xl text-slate-600 group-hover:text-yellow-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-yellow-400 font-semibold uppercase">Accessory</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Fire Alarm Hooter with Strobe Light</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                উচ্চ শব্দ তৈরি ও লাল লাইট ফ্ল্যাশ করে দ্রুত সবাইকে সতর্ক করার জন্য ব্যবহৃত হয়।
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('Fire Alarm Hooter with Strobe Light')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Combustible Gas Leak Detector -->
+                <div class="product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group" data-category="detector">
+                    <div class="h-48 bg-slate-950 flex items-center justify-center p-6 relative">
+                        <i class="fa-solid fa-gas-pump text-6xl text-slate-600 group-hover:text-cyan-500 group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-cyan-400 font-semibold uppercase">Detector</span>
+                            <h3 class="text-xl font-bold text-white mt-1">LPG & Natural Gas Leak Detector</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                গ্যাস লিক হলে সাথে সাথে সেন্স করে বিপদ সংকেত দেয়। বাসাবাড়ি ও হোটেলের রান্নাবান্নার ঘরের জন্য অত্যন্ত প্রয়োজনীয়।
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">অনুরোধ সাপেক্ষে মূল্যে</span>
+                                <span class="text-lg font-bold text-red-500">৳ আলোচনা সাপেক্ষে</span>
+                            </div>
+                            <button onclick="orderProduct('LPG & Gas Leak Detector')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-red-500 font-bold uppercase tracking-wider text-sm">Services</span>
+                <h2 class="text-3xl font-extrabold text-white">আমাদের পেশাদার সেবাসমূহ</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto">মালামাল সরবরাহের পাশাপাশি আমরা ফায়ার সেফটি সিস্টেমের পূর্ণাঙ্গ সার্ভিস প্রদান করে থাকি।</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-500 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">ডিজাইন ও পরিকল্পনা</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">ভবন বা ফ্যাক্টরির বিএনবিসি কোড অনুযায়ী ফায়ার ডিটেকশন সিস্টেমের সঠিক লেআউট ডিজাইন করা।</p>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">ইনস্টলেশন ও ফিটিং</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">দক্ষ টেকনিশিয়ান ও ইঞ্জিনিয়ার দিয়ে স্মোক ডিটেক্টর ও কন্ট্রোল প্যানেলের ওয়্যারিং এবং সেটিং কাজ সম্পন্ন করা।</p>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">সার্ভিসিং ও মেইনটেন্যান্স</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">পুরানো বা সচল ফায়ার অ্যালার্ম প্যানেল এবং ডিটেক্টরগুলোর নিয়মিত চেকিং ও ত্রুটি মেরামত সার্ভিস।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="grid lg:grid-cols-2 gap-8 items-center bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 p-8 rounded-3xl border border-slate-800">
+            <div class="space-y-4">
+                <span class="text-red-500 font-bold uppercase text-sm">About Us</span>
+                <h2 class="text-3xl font-extrabold text-white">কেন আমাদের বেছে নেবেন?</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    আমরা দীর্ঘদিন ধরে বিশ্বস্ততার সাথে বাসাবাড়ি, গার্মেন্টস, ফ্যাক্টরি, শোরুম ও বাণিজ্যিক ভবনে বিশ্বমানের ফায়ার ডিটেকশন ডিভাইস ও সামগ্রী সরবরাহ করে আসছি। আমাদের লক্ষ্য হলো সর্বোচ্চ নিরাপত্তায় আধুনিক প্রযুক্তির ফায়ার অ্যালার্ম নিশ্চিত করা।
+                </p>
+                <ul class="space-y-2 text-slate-300 text-sm font-medium">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> অরিজিনাল ও আন্তর্জাতিক মানের আন্তর্জাতিক ব্র্যান্ড</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাশ্রয়ী দাম এবং হোলসেল/পাইকারি সুবিধা</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> দ্রুততম সময়ে মালামাল ডেলিভারির নিশ্চয়তা</li>
+                </ul>
+            </div>
+            <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4 text-center">
+                <i class="fa-solid fa-building-shield text-5xl text-red-500"></i>
+                <h3 class="text-xl font-bold text-white">জরুরি কোটেশন বা বাল্ক অর্ডারের জন্য</h3>
+                <p class="text-slate-400 text-xs">আপনার প্রোজেক্টের মালামালের তালিকা পাঠাতে সরাসরি কল করুন অথবা হোয়াটসঅ্যাপে টেক্সট দিন।</p>
+                <div class="pt-2">
+                    <a href="tel:01601378983" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-red-600/20">
+                        <i class="fa-solid fa-phone font-bold"></i> ০১৬০১-৩৭৮৯OD কল করুন
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-800 space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-red-500 font-bold uppercase tracking-wider text-sm">Contact</span>
+                <h2 class="text-3xl font-extrabold text-white">যোগাযোগ বা মেসেজ পাঠান</h2>
+                <p class="text-slate-400 text-sm max-w-md mx-auto">কোনো প্রোডাক্ট বা সার্ভিস সম্পর্কিত প্রশ্ন থাকলে নিচের ফর্মটি পূরণ করুন</p>
+            </div>
+
+            <form id="contact-form" class="max-w-2xl mx-auto space-y-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">আপনার নাম</label>
+                        <input type="text" id="contact-name" required placeholder="উদাহরণ: রফিকুল ইসলাম" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white outline-none focus:border-red-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">মোবাইল নম্বর</label>
+                        <input type="tel" id="contact-phone" required placeholder="017xxxxxxxx" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white outline-none focus:border-red-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1">প্রোডাক্ট বা তথ্যের বিবরণ</label>
+                    <textarea id="contact-msg" rows="4" required placeholder="আপনার কি মালামাল প্রয়োজন তা সংক্ষেপে লিখুন..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white outline-none focus:border-red-500"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold rounded-xl shadow-lg shadow-red-600/20 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> মেসেজ পাঠান (WhatsApp-এ)
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-10 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-fire-extinguisher"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">SAFE<span class="text-red-500">FIRE</span> BD</span>
+                </div>
+                <div class="flex gap-6 font-semibold text-xs">
+                    <a href="#home" class="hover:text-red-400">হোম</a>
+                    <a href="#products" class="hover:text-red-400">প্রোডাক্টস</a>
+                    <a href="#services" class="hover:text-red-400">সেবাসমূহ</a>
+                    <a href="#contact" class="hover:text-red-400">যোগাযোগ</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
+                <p>© 2026 SafeFire BD | সমস্ত অধিকার সংরক্ষিত।</p>
+                <p>হোয়াটসঅ্যাপ সাপোর্টিং নম্বর: <span class="text-slate-300 font-mono">01601378983</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801601378983" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Script -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Default initial products
+        const defaultProducts = [
+            {
+                id: 1,
+                name: 'Photoelectric Smoke Detector',
+                category: 'detector',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'ধোঁয়া নির্গমন বা সৃষ্টির প্রাথমিক ধাপেই তীব্র শব্দে অ্যালার্ম সংকেত পাঠাতে সক্ষম।',
+                image: ''
+            },
+            {
+                id: 2,
+                name: 'Rate of Rise Heat Detector',
+                category: 'detector',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'তাপমাত্রা অতিরিক্ত বৃদ্ধি পেলে দ্রুত সংকেত প্রদান করে। রান্নাঘর বা ধুলোবালি যুক্ত স্থানের জন্য উপযুক্ত।',
+                image: ''
+            },
+            {
+                id: 3,
+                name: 'Fire Alarm Control Panel (2/4/8 Zone)',
+                category: 'panel',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'সমস্ত ডিটেক্টর ও সেন্সরকে একসাথে মনিটর করার মূল কন্ট্রোলিং সেন্ট্রাল সিস্টেম প্যানেল।',
+                image: ''
+            },
+            {
+                id: 4,
+                name: 'Manual Call Point (Emergency Break)',
+                category: 'accessory',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'জরুরি মুহূর্তে ম্যানুয়ালি চাপ দিয়ে বা গ্লাস ভেঙে ফায়ার অ্যালার্ম চালু করার সুইচ বাটন।',
+                image: ''
+            },
+            {
+                id: 5,
+                name: 'Fire Alarm Hooter with Strobe Light',
+                category: 'accessory',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'উচ্চ শব্দ তৈরি ও লাল লাইট ফ্ল্যাশ করে দ্রুত সবাইকে সতর্ক করার জন্য ব্যবহৃত হয়।',
+                image: ''
+            },
+            {
+                id: 6,
+                name: 'LPG & Natural Gas Leak Detector',
+                category: 'detector',
+                price: 'আলোচনা সাপেক্ষে',
+                desc: 'গ্যাস লিক হলে সাথে সাথে সেন্স করে বিপদ সংকেত দেয়। বাসাবাড়ি ও হোটেলের রান্নাবান্নার ঘরের জন্য অত্যন্ত প্রয়োজনীয়।',
+                image: ''
+            }
+        ];
+
+        // Load Products from LocalStorage or use defaults
+        let products = JSON.parse(localStorage.getItem('safefire_products')) || defaultProducts;
+        let isAdmin = false;
+
+        // Render Products
+        function renderProducts(filterCategory = 'all') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            products.forEach(p => {
+                if (filterCategory !== 'all' && p.category !== filterCategory) return;
+
+                const card = document.createElement('div');
+                card.className = "product-card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl hover:border-red-500/40 transition group relative";
+                
+                // Icon fallback or custom image
+                let imageElement = '';
+                if (p.image && p.image.trim() !== '') {
+                    imageElement = `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-shield-cat text-6xl text-slate-600\'></i>';">`;
+                } else {
+                    let iconClass = 'fa-fire-extinguisher';
+                    if (p.category === 'detector') iconClass = 'fa-smog';
+                    if (p.category === 'panel') iconClass = 'fa-sliders';
+                    if (p.category === 'accessory') iconClass = 'fa-bell';
+                    imageElement = `<i class="fa-solid ${iconClass} text-6xl text-slate-600 group-hover:text-red-500 group-hover:scale-110 transition duration-300"></i>`;
+                }
+
+                // Delete button for Admin
+                const deleteBtn = isAdmin ? `<button onclick="deleteProduct(${p.id})" class="absolute top-3 left-3 bg-red-600 hover:bg-red-700 text-white text-xs px-2.5 py-1 rounded-md font-bold z-10 shadow"><i class="fa-solid fa-trash"></i> ডিলিট</button>` : '';
+
+                card.innerHTML = `
+                    ${deleteBtn}
+                    <div class="h-48 bg-slate-950 flex items-center justify-center overflow-hidden relative">
+                        ${imageElement}
+                        <span class="absolute top-3 right-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-md font-semibold">স্টকে আছে</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-red-400 font-semibold uppercase">${p.category}</span>
+                            <h3 class="text-xl font-bold text-white mt-1">${p.name}</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">${p.desc}</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">মূল্য</span>
+                                <span class="text-lg font-bold text-red-500">${p.price.includes('৳') ? p.price : '৳ ' + p.price}</span>
+                            </div>
+                            <button onclick="orderProduct('${p.name}')" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-1.5 shadow-lg shadow-red-600/20">
+                                <i class="fa-brands fa-whatsapp"></i> অর্ডার করুন
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Toggle Admin Panel
+        const adminBtn = document.getElementById('admin-toggle-btn');
+        const adminBtnMobile = document.getElementById('admin-toggle-btn-mobile');
+        const adminPanel = document.getElementById('admin-panel');
+
+        function toggleAdmin() {
+            isAdmin = !isAdmin;
+            if (isAdmin) {
+                adminPanel.classList.remove('hidden');
+                adminBtn.classList.add('bg-amber-500', 'text-slate-950');
+                alert('অ্যাডমিন প্যানেল মোড সক্রিয় করা হয়েছে! আপনি এখন নতুন প্রোডাক্ট যোগ এবং বিদ্যমান প্রোডাক্ট ডিলিট করতে পারবেন।');
+            } else {
+                adminPanel.classList.add('hidden');
+                adminBtn.classList.remove('bg-amber-500', 'text-slate-950');
+            }
+            renderProducts();
+        }
+
+        adminBtn.addEventListener('click', toggleAdmin);
+        adminBtnMobile.addEventListener('click', toggleAdmin);
+
+        // Add Product Form Submit
+        document.getElementById('add-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('p-name').value;
+            const category = document.getElementById('p-category').value;
+            const price = document.getElementById('p-price').value || 'আলোচনা সাপেক্ষে';
+            const image = document.getElementById('p-image').value;
+            const desc = document.getElementById('p-desc').value || 'উচ্চমানের ফায়ার সেফটি পণ্য।';
+
+            const newProduct = {
+                id: Date.now(),
+                name,
+                category,
+                price,
+                image,
+                desc
+            };
+
+            products.unshift(newProduct);
+            localStorage.setItem('safefire_products', JSON.stringify(products));
+            renderProducts();
+
+            // Reset form
+            this.reset();
+            alert('নতুন প্রোডাক্টটি সফলভাবে যুক্ত করা হয়েছে!');
+        });
+
+        // Delete Product
+        function deleteProduct(id) {
+            if (confirm('আপনি কি এই প্রোডাক্টটি ডিলিট করতে চান?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('safefire_products', JSON.stringify(products));
+                renderProducts();
+            }
+        }
+
+        // Category Filter
+        const catBtns = document.querySelectorAll('.cat-btn');
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => {
+                    b.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+                    b.classList.add('bg-slate-900', 'text-slate-300');
+                });
+                btn.classList.remove('bg-slate-900', 'text-slate-300');
+                btn.classList.add('bg-red-600', 'text-white', 'shadow-md');
+
+                const cat = btn.getAttribute('data-category');
+                renderProducts(cat);
+            });
+        });
+
+        // Initial Render
+        renderProducts();
+
+        // Direct Product Order to WhatsApp
+        function orderProduct(productName) {
+            const phone = "8801601378983";
+            const msg = `আসসালামু আলাইকুম,%0Aআমি আপনার ওয়েবসাইট থেকে *${productName}* সম্পর্কে জানতে ও এটি অর্ডার করতে চাই।`;
+            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+        }
+
+        // Contact Form to WhatsApp
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const userPhone = document.getElementById('contact-phone').value;
+            const message = document.getElementById('contact-msg').value;
+
+            const phone = "8801601378983";
+            const fullMsg = `--- 📩 নতুন ইনকোয়ারি/মেসেজ ---%0A` +
+                            `👤 নাম: ${name}%0A` +
+                            `📱 কন্টাক্ট নম্বর: ${userPhone}%0A` +
+                            `📝 বিবরণ: ${message}`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(fullMsg)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
+```
