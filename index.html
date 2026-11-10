@@ -35,25 +35,77 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 px-4 text-center max-w-4xl mx-auto">
+    <section class="py-8 px-4 text-center max-w-4xl mx-auto">
         <div class="bg-red-600 text-white rounded-3xl p-8 shadow-xl">
-            <h2 class="text-3xl font-extrabold mb-4">আপনার ফায়ার সেফটি পণ্য সহজেই বিক্রি করুন!</h2>
-            <p class="text-sm text-red-100 mb-6">এখানে আপনার মালামাল পোস্ট করতে পারেন। প্রতি বিক্রিতে মাত্র ৩% প্ল্যাটফর্ম ফি কেটে বাকি ৯৭% আপনার অ্যাকাউন্টে দেওয়া হবে।</p>
-            <a href="#products" class="bg-white text-red-600 font-bold px-6 py-3 rounded-xl shadow transition">পণ্যগুলো দেখুন</a>
+            <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">আপনার ফায়ার সেফটি পণ্য সহজেই বিক্রি করুন!</h2>
+            <p class="text-xs sm:text-sm text-red-100">নিচে ফর্ম পূরণ করে আপনার মালামাল সরাসরি পোস্ট করুন। প্রতি বিক্রিতে মাত্র ৩% কমিশন কেটে বাকি ৯৭% আপনার অ্যাকাউন্টে দেওয়া হবে।</p>
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Bikroy Style Direct Post Form Section -->
+    <section class="py-4 px-4 max-w-3xl mx-auto">
+        <div class="bg-white border-2 border-emerald-500 rounded-2xl p-6 shadow-lg">
+            <h3 class="text-lg font-bold text-emerald-700 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-circle-plus"></i> নতুন পণ্য পোস্ট করুন (Bikroy Style)
+            </h3>
+            <form id="product-post-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold mb-1">বিক্রেতার নাম:</label>
+                    <input type="text" id="seller-name" required placeholder="আপনার নাম" class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">মোবাইল নম্বর (বিকাশ/নগদ):</label>
+                    <input type="text" id="seller-phone" required placeholder="01XXXXXXXXX" class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">পণ্যের নাম:</label>
+                    <input type="text" id="product-title" required placeholder="যেমন: Smoke Detector" class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">পণ্যের দাম (টাকা):</label>
+                    <input type="number" id="product-price" required placeholder="যেমন: ২৫০০" class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-semibold mb-1">ছবির লিংক (Image URL - ঐচ্ছিক):</label>
+                    <input type="url" id="product-img" placeholder="https://i.postimg.cc/... (ফাঁকা রাখলে অটো ছবি আসবে)" class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-semibold mb-1">পণ্যের বিবরণ ও লোকেশন:</label>
+                    <textarea id="product-desc" rows="2" placeholder="বিস্তারিত লিখুন..." class="w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                </div>
+                <div class="sm:col-span-2">
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-lg shadow transition text-sm">
+                        <i class="fa-solid fa-cloud-arrow-up mr-1"></i> পণ্য পাবলিশ করুন
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Products Feed Section (Bikroy Style Grid) -->
     <section id="products" class="py-8 px-4 max-w-7xl mx-auto">
-        <h3 class="text-2xl font-bold mb-6 border-b pb-2">সকল ফায়ার সেফটি পণ্য</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white border rounded-2xl overflow-hidden shadow-sm p-4">
-                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80" alt="Detector" class="w-full h-40 object-cover rounded-xl mb-3">
-                <h4 class="font-bold text-base">স্মোক ডিটেক্টর</h4>
-                <p class="text-xs text-slate-500 mt-1">অটো অ্যালার্ম সিস্টেম, বাসা ও কারখানার জন্য উপযোগী।</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="font-bold text-red-600">৳ ২,৫০০</span>
-                    <a href="https://wa.me/8801601378983?text=এই%20স্মোক%20ডিটেক্টরটি%20কিনতে%20চাই" target="_blank" class="bg-red-600 text-white text-xs px-3 py-1.5 rounded-lg font-bold">কিনুন</a>
+        <h3 class="text-2xl font-bold mb-6 border-b pb-2 flex justify-between items-center">
+            <span>সকল ফায়ার সেফটি পণ্য ফিড</span>
+            <span class="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full font-bold">৩% কমিশন পলিসি</span>
+        </h3>
+        
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Sample Item -->
+            <div class="bg-white border rounded-2xl overflow-hidden shadow-md flex flex-col">
+                <div class="relative h-48 bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80" alt="Detector" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ভেন্ডর পোস্ট</span>
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded">৳ ২,৫০০</span>
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-base">স্মোক ডিটেক্টর (অটো অ্যালার্ম)</h4>
+                        <p class="text-xs text-slate-500 mt-1">উন্নতমানের ফটোইলেকট্রিক সেন্সর। বাসা ও কারখানার জন্য উপযোগী।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t flex justify-between items-center text-xs">
+                        <span class="text-slate-500"><i class="fa-solid fa-user-shield text-emerald-600"></i> রহিম (01318...)</span>
+                        <a href="https://wa.me/8801601378983?text=এই%20স্মোক%20ডিটেক্টরটি%20কিনতে%20চাই" target="_blank" class="bg-red-600 text-white px-3 py-1.5 rounded-lg font-bold">কিনুন</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,8 +113,59 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t py-6 text-center text-xs text-slate-500 mt-12">
-        <p>© 2026 Powerful E.N.G. সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>© 2026 Powerful E.N.G. সর্বস্বত্ব সংরক্ষিত। বিকাশ/রকেট: 01318735863 | নগদ: 01601378983</p>
     </footer>
 
+    <!-- Script to handle dynamic posting -->
+    <script>
+        const productPostForm = document.getElementById('product-post-form');
+        const productsGrid = document.getElementById('products-grid');
+
+        if(productPostForm) {
+            productPostForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('seller-name').value;
+                const phone = document.getElementById('seller-phone').value;
+                const title = document.getElementById('product-title').value;
+                const price = document.getElementById('product-price').value;
+                let imgUrl = document.getElementById('product-img').value;
+                const desc = document.getElementById('product-desc').value;
+
+                if(!imgUrl) {
+                    imgUrl = 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80';
+                }
+
+                const numPrice = parseFloat(price);
+                const commission = (numPrice * 0.03).toFixed(2);
+                const sellerIncome = (numPrice - commission).toFixed(2);
+
+                const card = document.createElement('div');
+                card.className = 'bg-white border rounded-2xl overflow-hidden shadow-md flex flex-col';
+                card.innerHTML = `
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="${imgUrl}" alt="${title}" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ভেন্ডর লাইভ</span>
+                        <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded">৳ ${price}</span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-base">${title}</h4>
+                            <p class="text-xs text-slate-500 mt-1">${desc}</p>
+                            <p class="text-[10px] text-amber-600 mt-1 font-semibold">৩% কমিশন বাদে সেলার পাবেন: ৳ ${sellerIncome}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t flex justify-between items-center text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-user-shield text-emerald-600"></i> ${name} (${phone})</span>
+                            <a href="https://wa.me/8801601378983?text=سلام،%20আমি%20${encodeURIComponent(title)}%20পণ্যটি%20৳${price}%20মূল্যে%20কিনতে%20চাই।" target="_blank" class="bg-red-600 text-white px-3 py-1.5 rounded-lg font-bold">কিনুন</a>
+                        </div>
+                    </div>
+                `;
+
+                productsGrid.prepend(card);
+                productPostForm.reset();
+                alert('অভিনন্দন! আপনার পণ্যটি সফলভাবে Bikroy স্টাইলে লাইভ পোস্ট হয়েছে।');
+            });
+        }
+    </script>
 </body>
 </html>
